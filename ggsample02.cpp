@@ -133,7 +133,7 @@ static GLuint createProgram(const char* vsrc, const char* pv, const char* fsrc, 
 //   index: 線分の頂点インデックス
 //   戻り値: 作成された頂点配列オブジェクト名
 //
-static GLuint createObject(GLuint vertices, const GLfloat(*position)[2], GLuint lines, const GLuint* index)
+static GLuint createObject(GLuint vertices, const GLfloat(*position)[3], GLuint lines, const GLuint* index)
 {
   // 頂点配列オブジェクト
   GLuint vao;
