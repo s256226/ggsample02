@@ -133,7 +133,7 @@ static GLuint createProgram(const char* vsrc, const char* pv, const char* fsrc, 
 //   index: 線分の頂点インデックス
 //   戻り値: 作成された頂点配列オブジェクト名
 //
-static GLuint createObject(GLuint vertices, const GLfloat(*position)[2], GLuint lines, const GLuint* index)
+static GLuint createObject(GLuint vertices, const GLfloat(*position)[3], GLuint lines, const GLuint* index)
 {
   // 頂点配列オブジェクト
   GLuint vao;
@@ -144,7 +144,7 @@ static GLuint createObject(GLuint vertices, const GLfloat(*position)[2], GLuint 
   GLuint vbo;
   glGenBuffers(1, &vbo);
   glBindBuffer(GL_ARRAY_BUFFER, vbo);
-  glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat[2]) * vertices, position, GL_STATIC_DRAW);
+  glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat[3]) * vertices, position, GL_STATIC_DRAW);
 
   // インデックスバッファオブジェクト
   GLuint ibo;
@@ -201,12 +201,16 @@ int GgApp::main(int argc, const char* const* argv)
   const auto program{ createProgram(vsrc, "pv", fsrc, "fc") };
 
   // 頂点属性
-  static const GLfloat position[][2]
+  static const GLfloat position[][3]
   {
-    { -0.5f, -0.5f },
-    {  0.5f, -0.5f },
-    {  0.5f,  0.5f },
-    { -0.5f,  0.5f }
+    { -0.9, 0.9 , -0.9},
+    { -0.9, 0.9 , 0.9},
+    { 0.9, 0.9 , -0.9},
+    { 0.9, 0.9 , 0.9},
+    { -0.9, -0.9 , -0.9},
+    { -0.9, -0.9 , 0.9},
+    { 0.9, -0.9 , -0.9},
+    { 0.9, -0.9 , 0.9},
   };
 
   // 頂点数
