@@ -153,7 +153,7 @@ static GLuint createObject(GLuint vertices, const GLfloat(*position)[2], GLuint 
   glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(GLuint) * lines, index, GL_STATIC_DRAW);
 
   // 結合されている頂点バッファオブジェクトを in 変数から参照できるようにする
-  glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, 0);
+  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
   glEnableVertexAttribArray(0);
 
   // 頂点配列オブジェクトの結合を解除した後に頂点バッファオブジェクトとインデックスバッファオブジェクトの結合を解除する
@@ -203,10 +203,14 @@ int GgApp::main(int argc, const char* const* argv)
   // 頂点属性
   static const GLfloat position[][2]
   {
-    { -0.5f, -0.5f },
-    {  0.5f, -0.5f },
-    {  0.5f,  0.5f },
-    { -0.5f,  0.5f }
+    { -0.9f, 0.9f, -0.9f },
+    { -0.9f, 0.9f, 0.9f },
+    { 0.9f, 0.9f, 0.9f },
+    { 0.9f, 0.9f, -0.9f },
+    { -0.9f, -0.9f, -0.9f },
+    { -0.9f, -0.9f, 0.9f },
+    { 0.9f, -0.9f, 0.9f },
+    { 0.9f, -0.9f, -0.9f },
   };
 
   // 頂点数
@@ -215,7 +219,7 @@ int GgApp::main(int argc, const char* const* argv)
   // 頂点インデックス
   static const GLuint index[]
   {
-    0, 2, 1, 3
+    0, 1, 2, 3, 4, 5, 6, 7
   };
 
   // 稜線数
