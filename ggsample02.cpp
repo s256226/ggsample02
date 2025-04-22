@@ -1,4 +1,4 @@
-﻿//
+//
 // ゲームグラフィックス特論宿題アプリケーション
 //
 #include "GgApp.h"
@@ -203,10 +203,10 @@ int GgApp::main(int argc, const char* const* argv)
   // 頂点属性
   static const GLfloat position[][2]
   {
-    { -0.9, 0.9},
-    { -0.9, 0.9},
-    { 0.9, 0.9},
-    { 0.9, 0.9}
+    { -0.5f, -0.5f },
+    {  0.5f, -0.5f },
+    {  0.5f,  0.5f },
+    { -0.5f,  0.5f }
   };
 
   // 頂点数
