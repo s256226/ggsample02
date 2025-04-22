@@ -201,7 +201,7 @@ int GgApp::main(int argc, const char* const* argv)
   const auto program{ createProgram(vsrc, "pv", fsrc, "fc") };
 
   // 頂点属性
-  static const GLfloat position[][2]
+  static const GLfloat position[][3]
   {
     { -0.9f, 0.9f, -0.9f },
     { -0.9f, 0.9f, 0.9f },
@@ -210,7 +210,7 @@ int GgApp::main(int argc, const char* const* argv)
     { -0.9f, -0.9f, -0.9f },
     { -0.9f, -0.9f, 0.9f },
     { 0.9f, -0.9f, 0.9f },
-    { 0.9f, -0.9f, -0.9f },
+    { 0.9f, -0.9f, -0.9f }
   };
 
   // 頂点数
