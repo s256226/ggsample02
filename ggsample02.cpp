@@ -144,7 +144,7 @@ static GLuint createObject(GLuint vertices, const GLfloat(*position)[3], GLuint 
   GLuint vbo;
   glGenBuffers(1, &vbo);
   glBindBuffer(GL_ARRAY_BUFFER, vbo);
-  glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat[2]) * vertices, position, GL_STATIC_DRAW);
+  glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat[3]) * vertices, position, GL_STATIC_DRAW);
 
   // インデックスバッファオブジェクト
   GLuint ibo;
